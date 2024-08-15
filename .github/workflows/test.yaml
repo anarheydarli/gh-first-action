@@ -25,6 +25,8 @@ jobs:
         working-directory: ./second-action-react
 
   deploy:
+    # We build dependencies in the deploy job with a keyword `needs`.
+    needs: test
     runs-on: ubuntu-latest
     steps:
       # Download a copy of the code in your repository.
